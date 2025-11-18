@@ -11,6 +11,8 @@ SELECT
   CONCAT('$', ROUND(SUM(sales)/COUNT(DISTINCT order_key),2)) AS avg_sales_per_order
 FROM superstore_sales;
 
+[Query 1 Output CSV](../sql_results/q1_top_artists.csv)
+
 ```
 
 ## 1.2 Sales by Year (YOY Growth %)
