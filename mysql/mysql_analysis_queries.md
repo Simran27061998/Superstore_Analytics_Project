@@ -36,7 +36,7 @@ GROUP BY date_info.year
 ORDER BY date_info.year;
 
 ```
-[Query 1.2 Output CSV](mysql_query_outputs/sales_by_year_and_YOY_growth%.csv)
+[Query 1.2 Output CSV](mysql_query_outputs/year_on_year_growth.csv)
 
 
 ## 1.3 Monthly Sales Trend (Seasonality)
