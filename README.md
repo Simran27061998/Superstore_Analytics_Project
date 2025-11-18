@@ -1,14 +1,14 @@
-🛒 Superstore Analytics Project
+## 🛒 Superstore Analytics Project
 
-End-to-end retail analytics using Python, MySQL, and Power BI
+End-to-end retail analytics using **Python, MySQL, and Power BI**
 
-This project performs a complete analysis of the Superstore dataset (2015–2018) and demonstrates an industry-style analytics workflow:
+This project performs a complete analysis of the **Superstore dataset (2015–2018)** and demonstrates an **industry-style analytics workflow:**
 
-Python → data cleaning, feature engineering, forecasting
+**Python** → data cleaning, feature engineering, forecasting
 
-MySQL → database modeling, ETL, SQL analysis
+**MySQL** → database modeling, ETL, SQL analysis
 
-Power BI → dashboarding, KPI visualization
+**Power BI** → dashboarding, KPI visualization
 
 The goal is to simulate a real-world BI/Analytics workflow and present insights in both:
 
