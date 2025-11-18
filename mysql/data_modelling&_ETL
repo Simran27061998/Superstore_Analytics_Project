@@ -1,4 +1,6 @@
-1. Source verification
+# 1. Source verification
+
+```
 
 SELECT * FROM superstore_cleaned LIMIT 10;
 
