@@ -1,8 +1,10 @@
-# 1. Source verification
+## 1. Source verification
 
 ```sql
+
 SELECT * FROM superstore_cleaned LIMIT 10;
 
+```
 2.1 Product dimension (product_info)
 
 create table product_info(
@@ -16,7 +18,7 @@ insert ignore into  product_info ( product_id, product_category, product_sub_cat
 select distinct product_id, category, sub_category, product_name
 from superstore_cleaned;
  
- -- Validation checks :
+ Validation checks :
  
 SELECT COUNT(*) AS total_rows,
        COUNT(DISTINCT product_id) AS unique_product_ids
