@@ -1,0 +1,6 @@
+ship_mode,delivery_status,num_of_orders,total_sales
+"standard class",On-Time,4074,$940947.33
+"second class",On-Time,1902,$449914.04
+"standard class",Late,1785,$399884.31
+"first class",On-Time,1501,$345572.26
+"same day",On-Time,538,$125219.03
