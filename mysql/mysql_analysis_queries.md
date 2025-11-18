@@ -12,10 +12,9 @@ SELECT
 FROM superstore_sales;
 
 ```
-[Query 1.1 Output CSV](mysql_query_outputs/Total_Sales_Profitability_Orders_Overview.csv)
+[Query 1.1 Output CSV](mysql_query_outputs/total_sales_profitability_orders_overview.csv)
 
 
-```
 
 ## 1.2 Sales by Year (YOY Growth %)
 
@@ -37,6 +36,8 @@ GROUP BY date_info.year
 ORDER BY date_info.year;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/sales_by_year_and_YOY_growth%.csv)
+
 
 ## 1.3 Monthly Sales Trend (Seasonality)
 
@@ -55,6 +56,8 @@ ORDER BY date_info.year,
                                         'July','August','September','October','November','December');
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/monthly_sales_trend.csv)
+
 
  ## 1.4 Sales by Region
  
@@ -69,6 +72,8 @@ GROUP BY region_info.region
 ORDER BY total_sales DESC;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/sales_by_region.csv)
+
 
 ## 1.5 Top 10 States by Sales
 
@@ -84,6 +89,8 @@ ORDER BY total_sales DESC
 LIMIT 10;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/top_10_states_by_sales.csv)
+
 ## 2. Customer Segment Insights
 
 ## 2.1 Sales & Order Count by Customer Segment
@@ -102,6 +109,9 @@ GROUP BY customer_info.customer_segment
 ORDER BY SUM(superstore_sales.sales) DESC;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/sales_and_order_count_by_customer_segment.csv)
+
+
 ## 2.2 Top 10 Customers by Sales
 
 ```sql
@@ -117,6 +127,8 @@ ORDER BY SUM(superstore_sales.sales) DESC
 LIMIT 10;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/top_10_customers_by_sales.csv)
+
 
 ## 3. Product Performance
 ## 3.1 Sales by Product Category & Sub-Category
@@ -135,6 +147,8 @@ GROUP BY
 ORDER BY SUM(superstore_sales.sales) DESC;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/sales_by_product_category_and_product_sub_category.csv)
+
 
 ## 3.2 Top 10 Products by Sales
 
@@ -150,6 +164,8 @@ ORDER BY SUM(superstore_sales.sales) DESC
 LIMIT 10;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/top_10_products_by_sales.csv)
+
 
 ## 3.3 Category Contribution to Total Sales
 
@@ -170,6 +186,8 @@ GROUP BY product_info.product_category
 ORDER BY SUM(superstore_sales.sales) DESC;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/category_contribution_to_total_sales.csv)
+
 
 ## 4. Shipping & Delivery Performance
 
@@ -187,6 +205,7 @@ GROUP BY shipping_info.ship_mode
 ORDER BY SUM(superstore_sales.sales) DESC;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/avg_delivery_days_by_ship_mode.csv)
 
 ## 4.2 Late vs On-Time Shipments
 ## Late = delivery_days > 5
@@ -209,6 +228,7 @@ GROUP BY
 ORDER BY SUM(superstore_sales.sales) DESC;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/late_vs_early_shipments.csv)
 
 ## 4.3 Sales by Quarter
 
@@ -223,6 +243,8 @@ GROUP BY quarter
 ORDER BY quarter;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/sales_by_quarter.csv)
+
 
 ## 4.4 Delivery Days Trend by Year
 
@@ -237,6 +259,8 @@ GROUP BY date_info.year
 ORDER BY date_info.year;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/delivery_days_trend_by_year.csv)
+
 
 ## 5. Advanced Business Insights
 ## 5.1 Average Order Value Trend by Year
@@ -255,6 +279,8 @@ GROUP BY date_info.year
 ORDER BY date_info.year;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/avg_order_value_trend_by_year.csv)
+
 
 ## 5.2 Delivery Performance by Region
 
@@ -270,6 +296,8 @@ GROUP BY region_info.region
 ORDER BY SUM(superstore_sales.sales) DESC;
 
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/delivery_performance_by_region.csv)
+
 
 ## 5.3 Segment vs Ship Mode Preference
 
@@ -290,3 +318,4 @@ ORDER BY
   customer_info.customer_segment,
   shipping_info.ship_mode;
 ```
+[Query 1.1 Output CSV](mysql_query_outputs/segment_vs_ship_mode_preference.csv)
