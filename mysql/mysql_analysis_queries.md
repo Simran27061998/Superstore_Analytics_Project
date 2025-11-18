@@ -11,7 +11,8 @@ SELECT
   CONCAT('$', ROUND(SUM(sales)/COUNT(DISTINCT order_key),2)) AS avg_sales_per_order
 FROM superstore_sales;
 
-[Query 1.1 Output CSV](./mysql_query_outputs/Total_Sales_Profitability_Orders_Overview.csv)
+[Query 1.1 Output CSV](../mysql_query_outputs/Total_Sales_Profitability_Orders_Overview.csv)
+
 
 ```
 
