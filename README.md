@@ -27,3 +27,21 @@ The objective is to simulate a real-world BI/Analytics pipeline and deliver both
 
 ## Repository Structure
 
+Superstore_Analytics_Project/
+│
+├── python/
+│ ├── cleaning_upload.py
+│ ├── predictive_upload.py
+│ └── forecast_next_7_days.csv
+│
+├── mysql/
+│ ├── data_modelling&_ETL.md
+│ ├── mysql_analysis_queries.md
+│ ├── mysql_query_outputs/
+│ └── superstore_erd_db_diagram.png
+│
+├── powerbi/
+│ ├── superstore_dashboard.pbix
+│ └── dashboard_screenshots/
+│
+└── README.md
