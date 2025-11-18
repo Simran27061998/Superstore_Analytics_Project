@@ -1,7 +1,6 @@
 # 1. Source verification
 
-```
-
+```sql
 SELECT * FROM superstore_cleaned LIMIT 10;
 
 2.1 Product dimension (product_info)
