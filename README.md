@@ -18,38 +18,34 @@ Business Format → interactive dashboards, KPIs, forecasting
 
 🛠 Tools & Technologies
 
-| Layer                       | Tools Used                                                   |
-| --------------------------- | ------------------------------------------------------------ |
-| Data Cleaning & Forecasting | Python (Pandas, NumPy, Statsmodels, SQLAlchemy, Matplotlib)  |
-| Database & Modeling         | MySQL (Star Schema, Fact/Dim model, SQL queries)             |
-| BI & Visualization          | Power BI (Executive, Product, Shipping, Customer dashboards) |
-| Version Control             | Git, GitHub                                                  |
+Python → Pandas, NumPy, Statsmodels, Matplotlib, SQLAlchemy
 
+MySQL → Star schema, fact/dimension modeling, SQL analysis
+
+Power BI → Dashboards, KPIs, slicers, interactive visuals
+
+GitHub → Version control & portfolio documentation
 
 📁 Repository Structure
-
 Superstore_Analytics_Project/
 │
 ├── python/
-│   ├── cleaning_upload.py                 # Data cleaning & feature engineering
-│   ├── predictive_upload.py               # Sales forecasting
-│   └── forecast_next_7_days.csv           # Model output
+│   ├── cleaning_upload.py
+│   ├── predictive_upload.py
+│   └── forecast_next_7_days.csv
 │
 ├── mysql/
-│   ├── data_modelling&_ETL.md             # Star schema + ETL scripts
-│   ├── mysql_analysis_queries.md          # Business SQL queries
-│   ├── mysql_query_outputs/               # CSV outputs of SQL queries
-│   └── superstore_erd_db_diagram.png      # ERD diagram
+│   ├── data_modelling&_ETL.md
+│   ├── mysql_analysis_queries.md
+│   ├── mysql_query_outputs/
+│   └── superstore_erd_db_diagram.png
 │
 ├── powerbi/
-│   ├── superstore_dashboard.pbix          # Final dashboard
-│   └── dashboard_screenshots/             # PNG screenshots
+│   ├── superstore_dashboard.pbix
+│   └── dashboard_screenshots/
 │
 └── README.md
 
-
 📘 Python: Data Cleaning & Predictive Sales Forecasting
 
-(from cleaning_upload.py & predictive_upload.py)
-
-This project begins with a Python workflow for preparing the Superstore dataset and generating a 7-day sales forecast. The cleaned output is loaded into MySQL for modelling and further analysis.
+(Your long Python section goes here — it will format beautifully now.)
