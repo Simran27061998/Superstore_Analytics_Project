@@ -1,4 +1,4 @@
-## 🛒 Superstore Analytics Project
+# 🛒 Superstore Analytics Project
 
 End-to-end retail analytics using **Python, MySQL, and Power BI**
 
