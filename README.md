@@ -77,6 +77,17 @@ Steps performed in the predictive analysis script:
 - Exported the forecast output for dashboarding  
 
  [superstore_predictive_analysis_python_script](python/SuperStore_Predictive_Analysis.ipynb)
+ 
+ [superstore_predictive_analysis_7days_forecast](python/forecast_next_7_days.csv)
+ 
+Screenshots: 
+
+<img width="1023" height="394" alt="image" src="https://github.com/user-attachments/assets/3cecba31-1845-49a6-ac29-dcb012916773" />
+
+<img width="1004" height="372" alt="image" src="https://github.com/user-attachments/assets/df381475-383f-4b6a-b7fb-fe7c9b1f4bf5" />
+
+<img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/bdce73d6-a01f-454b-a869-644860d38d11" />
+
 
 ### Key Outcomes 
 
