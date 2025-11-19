@@ -114,7 +114,7 @@ nProducts & " of " & totalProducts & " products = " & pct & " of sales (Pareto)"
 ## Customer Dashboard Measures:
 
 ```DAX
-a. New Customers = 
+1. New Customers = 
 CALCULATE(
     DISTINCTCOUNT(superstore_sales[customer_key]),
     DATEADD(Calendar[full_date], -1, YEAR)
@@ -122,8 +122,8 @@ CALCULATE(
 ```
 
 ```DAX
-b. Repeat customers = 
-1. Repeat Customers Count = 
+2. Repeat customers = 
+a. Repeat Customers Count = 
 COUNTROWS(
 FILTER(
 ADDCOLUMNS(
@@ -136,20 +136,23 @@ SUMMARIZE( superstore_sales, superstore_sales[customer_key] ),
 ```
 
 ```DAX
-2. Repeat Customer % = COALESCE( DIVIDE( [Repeat Customers Count], [Total Customers] ), 0 )
+b. Repeat Customer % = COALESCE( DIVIDE( [Repeat Customers Count], [Total Customers] ), 0 )
 ```
 
 ```DAX
-c. Avg Spend per Cust = 
+3. Avg Spend per Cust = 
 DIVIDE( [Total Sales], [Total Customers], 0 )
 ```
 
 ```DAX
-d. Orders per Cust = DIVIDE( [Total Orders], [Total Customers], 0 )
+4. Orders per Cust = DIVIDE( [Total Orders], [Total Customers], 0 )
 ```
 
 ```DAX
-Total Customers PY = 
+
+5. Cutsomer YOY%
+
+a.Total Customers PY = 
 VAR MinDate =
     MIN ( Calendar[full_date] )
 VAR MaxDate =
@@ -167,7 +170,7 @@ CALCULATE(
 ```
 
 ```DAX
-Customer YoY % = 
+b. Customer YoY % = 
 VAR Prev = [Total Customers PY]
 VAR Curr = [Total Customers]
 RETURN
@@ -179,7 +182,7 @@ IF(
 ```
 
 ```DAX
-Revenue from Repeat Customers = 
+6. Revenue from Repeat Customers = 
 CALCULATE(
     [Total Sales],
     FILTER(
@@ -190,12 +193,14 @@ CALCULATE(
 ```
 
 ```DAX
-Repeat Cust Rev % = 
+7. Repeat Cust Rev % = 
 DIVIDE( [Revenue from Repeat Customers], [Total Sales], 0 )
 ```
 
 ```DAX
-g. Churn Rate = Churn Rate = 
+8. Churn Rate :
+
+a. Churn Rate = 
 VAR Lost = [Lost Customers]
 VAR Prev = [Prev Customers Count]
 RETURN
@@ -203,22 +208,18 @@ IF( Prev = 0 || ISBLANK( Prev ), BLANK(), DIVIDE( Lost, Prev ) )
 ```
 
 ```DAX
-Lost Customers = 
+b. Lost Customers = 
 VAR MinDate = MIN( Calendar[full_date] )
 VAR MaxDate = MAX( Calendar[full_date] )
 VAR ShiftMin = EDATE( MinDate, -12 )
 VAR ShiftMax = EDATE( MaxDate, -12 )
-```
 
-```DAX
 VAR CurrSet =
     CALCULATETABLE(
         VALUES( superstore_sales[customer_key] ),
         DATESBETWEEN( Calendar[full_date], MinDate, MaxDate )
     )
-```
 
-```DAX
 VAR PrevSet =
     CALCULATETABLE(
         VALUES( superstore_sales[customer_key] ),
@@ -227,23 +228,24 @@ VAR PrevSet =
 ```
 
 ```DAX
-Prev Customers Count = 
+c. Prev Customers Count = 
 VAR MinDate = MIN( Calendar[full_date] )
 VAR MaxDate = MAX( Calendar[full_date] )
 VAR ShiftMin = EDATE( MinDate, -12 )
 VAR ShiftMax = EDATE( MaxDate, -12 )
-```
 
-```DAX
 VAR PrevSet =
     CALCULATETABLE(
         VALUES( superstore_sales[customer_key] ),
         DATESBETWEEN( Calendar[full_date], ShiftMin, ShiftMax )
     )
+
 ```
 
-```DAX
-a. Late Shipments Count (Ship Date) = 
+## Shipping Dashboard Measures
+
+```
+1. Late Shipments Count (Ship Date) = 
 CALCULATE(
   COUNTROWS( FILTER( superstore_sales, superstore_sales[delivery_days] > 5 ) ),
   USERELATIONSHIP( date_info[date_key], superstore_sales[ship_date_key] )
@@ -251,7 +253,7 @@ CALCULATE(
 ```
 
 ```DAX
-Late Shipments % = 
+2. Late Shipments % = 
 DIVIDE(
   [Late Shipments Count (Ship Date)],
   CALCULATE( COUNTROWS( superstore_sales ), USERELATIONSHIP( date_info[date_key], superstore_sales[ship_date_key] ) ),
@@ -260,11 +262,11 @@ DIVIDE(
 ```
 
 ```DAX
-b. On-Time Shipments% = 1 - [Late Shipments %]
+3. On-Time Shipments% = 1 - [Late Shipments %]
 ```
 
 ```DAX
-c. Median Delivery Days = 
+4. Median Delivery Days = 
 CALCULATE(
   PERCENTILEX.INC(
     FILTER( superstore_sales, NOT( ISBLANK( superstore_sales[delivery_days] ) ) ),
@@ -276,11 +278,11 @@ CALCULATE(
 ```
 
 ```DAX
-d. Avg Sales per Ship^ = DIVIDE( [Total Sales], [Total Shipments], 0 )
+5. Avg Sales per Ship^ = DIVIDE( [Total Sales], [Total Shipments], 0 )
 ```
 
 ```DAX
-e. Avg Delivery Days = 
+6. Avg Delivery Days = 
 CALCULATE(
     AVERAGE(superstore_sales[delivery_days]),
     USERELATIONSHIP(date_info[date_key], superstore_sales[ship_date_key])
@@ -288,11 +290,18 @@ CALCULATE(
 ```
 
 ```DAX
-f. Orders Shipped Count = 
+7. Orders Shipped Count = 
 DISTINCTCOUNT( superstore_sales[order_key] )
- g. Total Shipments = 
+```
+
+```DAX
+8. Total Shipments = 
 COUNTROWS( superstore_sales )
-h. SLA 2 Days % = 
+```
+
+```DAX
+
+9. SLA 2 Days % = 
 DIVIDE(
   CALCULATE(
     COUNTROWS(superstore_sales),
