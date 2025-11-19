@@ -61,9 +61,9 @@ Steps performed in the data cleaning script:
 - Renamed all columns into SQL-friendly snake_case  
 - Exported the cleaned dataset into CSV and loaded it into MySQL for modeling
   
- [superstore_raw_dataset](python/SuperStore_raw_dataset.csv)
+ [superstore_raw_dataset](superstore_raw_dataset/SuperStore_raw_dataset.csv)
  
- [superstore_clean_python_script](superstore_raw_dataset/SuperStore_dataset_cleaned.ipynb)
+ [superstore_clean_python_script](python/SuperStore_dataset_cleaned.ipynb)
  
  [superstore_cleaned_dataset](superstore_cleaned_dataset/Superstore_cleaned_final.csv)
  
