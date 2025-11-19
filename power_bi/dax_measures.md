@@ -122,7 +122,8 @@ CALCULATE(
 ```
 
 ```DAX
-2. Repeat customers = 
+2. Repeat customers
+
 a. Repeat Customers Count = 
 COUNTROWS(
 FILTER(
@@ -133,9 +134,7 @@ SUMMARIZE( superstore_sales, superstore_sales[customer_key] ),
 [OrdersPerCust] > 1
 )
 )
-```
 
-```DAX
 b. Repeat Customer % = COALESCE( DIVIDE( [Repeat Customers Count], [Total Customers] ), 0 )
 ```
 
@@ -167,9 +166,7 @@ CALCULATE(
     Calendar[full_date] >= ShiftMin &&
     Calendar[full_date] <= ShiftMax
 )
-```
 
-```DAX
 b. Customer YoY % = 
 VAR Prev = [Total Customers PY]
 VAR Curr = [Total Customers]
@@ -205,9 +202,7 @@ VAR Lost = [Lost Customers]
 VAR Prev = [Prev Customers Count]
 RETURN
 IF( Prev = 0 || ISBLANK( Prev ), BLANK(), DIVIDE( Lost, Prev ) )
-```
 
-```DAX
 b. Lost Customers = 
 VAR MinDate = MIN( Calendar[full_date] )
 VAR MaxDate = MAX( Calendar[full_date] )
@@ -225,9 +220,7 @@ VAR PrevSet =
         VALUES( superstore_sales[customer_key] ),
         DATESBETWEEN( Calendar[full_date], ShiftMin, ShiftMax )
     )
-```
 
-```DAX
 c. Prev Customers Count = 
 VAR MinDate = MIN( Calendar[full_date] )
 VAR MaxDate = MAX( Calendar[full_date] )
