@@ -222,9 +222,9 @@ Steps performed in the Power BI dashboard development:
   - Ship mode efficiency  
   - Region-wise delivery performance  
 
-[superstore_powerbi_dashboard](powerbi/Superstore_Dashboard.pbix)
+[superstore_powerbi_dashboard](power_bi/Superstore_Dashboard.pbix)
 
-[superstore_powerbi_dax_measures](powerbi/dax_measures.md)
+[superstore_powerbi_dax_measures](power_bi/dax_measures.md)
 
 ⚠️ Note: Power BI `.pbix` files cannot be previewed on GitHub.  
 Download and open in **Power BI Desktop** to view the interactive version.
