@@ -51,32 +51,21 @@ Superstore_Analytics_Project/
 
 ## Python — Data Cleaning & Predictive Sales Forecasting
 
-Python serves as the starting point of this project.  
-Two scripts handle the full pipeline:
+## Data Cleaning (Python)
 
-1. `cleaning_upload.py` — data cleaning, transformation, feature engineering  
-2. `predictive_upload.py` — daily sales forecasting using Holt-Winters exponential smoothing  
+Steps performed in the data cleaning script:
 
-Both outputs feed into the MySQL warehouse and Power BI dashboards.
-
----
-
-### 1. Data Cleaning & Feature Engineering (cleaning_upload.py)
-
-#### Loading the dataset
-
-#### Parsing date columns (DD-MM-YYYY format)
-
-#### Delivery lead time calculation
-
-#### Imputing missing postal codes
-
-#### Cleaning all text fields
-
-#### Weekday vs Weekend classification
-
-#### Export cleaned dataset
-
+- Parsed order and ship dates using correct day-first formatting  
+- Created derived features: delivery_days, weekday/weekend flag, month, quarter, year, day name  
+- Standardized text columns (trimmed whitespace, fixed encoding issues, converted to lowercase)  
+- Imputed missing postal codes  
+- Renamed all columns into SQL-friendly snake_case  
+- Exported the cleaned dataset into CSV and loaded it into MySQL for modeling
+  
+ [superstore_raw_dataset](python/SuperStore_dataset_cleaned.ipynb)
+ [superstore_clean_python_script](superstore_raw_dataset/SuperStore_raw_dataset.csv)
+ [superstore_cleaned_dataset](superstore_cleaned_dataset/Superstore_cleaned_final.csv)
+ 
 ### 2. Predictive Sales Forecasting (predictive_upload.py)
 
 #### Aggregate daily sales
