@@ -101,3 +101,64 @@ Screenshots:
 
 * 7-day sales forecast using Holt-Winters exponential smoothing
 
+---
+
+### 3. MySQL — Data Modeling & ETL
+
+Steps performed in the data modeling and ETL process:
+
+- Designed a complete **Star Schema** optimized for analytical queries  
+- Created **dimension tables** for products, customers, regions, orders, shipping details, and dates  
+- Built a **central fact table** (superstore_sales) containing sales, delivery metrics, and foreign keys  
+- Implemented surrogate keys (AUTO_INCREMENT) for all dimensions  
+- Cleaned and standardized keys to avoid join inconsistencies  
+- Created a unified **date dimension (date_info)** capturing full calendar attributes for both order and ship dates  
+- Engineered a custom calendar generator using number tables to populate all dates between min/max ranges  
+- Loaded cleaned Superstore data into MySQL from Python using SQLAlchemy  
+- Applied ETL mappings to join raw data to the correct dimension keys  
+- Validated row counts between source and fact table  
+- Verified that sales totals matched between source (`superstore_cleaned`) and fact table (`superstore_sales`)  
+- Ensured referential integrity between fact and dimension tables  
+
+Database Components:
+
+- product_info (Product Dimension)  
+- customer_info (Customer Dimension)  
+- region_info (Geographic Dimension)  
+- order_info (Order Dimension)  
+- shipping_info (Ship Mode Dimension)  
+- date_info (Calendar / Date Dimension)  
+- superstore_sales (Fact Table)
+
+[superstore_data_modelling_sql_script](mysql/data_modelling&_ETL.md)
+ 
+[superstore_star_schema](mysql/superstore_erd_db_diagram.png)
+
+ Screenshot:
+
+ <img width="1167" height="1232" alt="image" src="https://github.com/user-attachments/assets/41260717-9ce0-4c5c-a431-628ae392d551" />
+
+---
+
+### 4. MySQL — Analytical SQL Queries
+
+Steps performed in SQL analysis:
+
+- Executed queries to analyze sales, profitability, customer behavior, product performance, and shipping efficiency  
+- Generated YoY sales trends  
+- Identified top-performing categories, subcategories, and products  
+- Ranked customers by total sales and order volume  
+- Calculated segment-wise KPIs (sales, order counts, AOV)  
+- Performed regional and state-level sales analysis  
+- Evaluated shipping mode performance and average delivery time  
+- Classified shipments into on-time vs late categories  
+- Measured delivery trends over time (yearly averages)  
+- Assessed customer shipping preferences by segment  
+- Calculated quarterly revenue distribution  
+- Evaluated average order value trends  
+- Determined category contribution percentages to total revenue  
+- Exported outputs as CSV files for dashboarding  
+
+[superstore_mysql_analysis_queries](mysql/mysql_analysis_queries.md)
+
+[superstore_mysql_analysis_outputs](mysql/mysql_query_outputs)
