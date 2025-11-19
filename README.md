@@ -27,7 +27,7 @@ The objective is to simulate a real-world BI/Analytics pipeline and deliver both
 
 ## Repository Structure
 
----
+```
 Superstore_Analytics_Project/
 │
 ├── python/
@@ -47,6 +47,7 @@ Superstore_Analytics_Project/
 │
 └── README.md
 
+```
 ---
 
 ## 1. Python — Data Cleaning 
