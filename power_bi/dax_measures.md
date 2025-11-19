@@ -3,17 +3,18 @@
 ## Executive Dasboard Measures:
 
 ```DAX
-Total Sales = SUM('superstore_sales'[sales])
-Total Orders = DISTINCTCOUNT( superstore_sales[order_key] )
-Total Customers = DISTINCTCOUNT( superstore_sales[customer_key] )
-Total Shipments = COUNTROWS( superstore_sales )
-Avg Order Value (Per Order) = DIVIDE([Total Sales], [Total Orders], 0)
-Estimated Profit = [Total Sales]*0.25
-Profit Margin% = DIVIDE([Estimated Profit],[Total Sales])
-CLV – Customer Lifetime Value
-Avg Spend per Cust = DIVIDE( [Total Sales], [Total Customers], 0 )
-Orders per Cust = DIVIDE( [Total Orders], [Total Customers], 0 )
-CLV = [Avg Spend per Cust] * [Orders per Cust]
+
+1. Total Sales = SUM('superstore_sales'[sales])
+2. Total Orders = DISTINCTCOUNT( superstore_sales[order_key] )
+3. Total Customers = DISTINCTCOUNT( superstore_sales[customer_key] )
+4. Total Shipments = COUNTROWS( superstore_sales )
+5. Avg Order Value (Per Order) = DIVIDE([Total Sales], [Total Orders], 0)
+6. Estimated Profit = [Total Sales]*0.25
+7. Profit Margin% = DIVIDE([Estimated Profit],[Total Sales])
+8. CLV – Customer Lifetime Value
+       a. Avg Spend per Cust = DIVIDE( [Total Sales], [Total Customers], 0 )
+       b. Orders per Cust = DIVIDE( [Total Orders], [Total Customers], 0 )
+       c. CLV = [Avg Spend per Cust] * [Orders per Cust]
 ```
 
 ```DAX
