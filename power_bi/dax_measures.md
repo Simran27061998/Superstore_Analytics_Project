@@ -17,6 +17,8 @@
        c. CLV = [Avg Spend per Cust] * [Orders per Cust]
 ```
 
+## Product Dasboard Measures:
+
 ```DAX
 
 1. Top Category = 
@@ -29,6 +31,10 @@ VAR Tbl =
           VAR TopRow = TOPN(1, Tbl, [CategorySales], DESC)
 RETURN
 MAXX(TopRow, product_info[product_category])
+
+```
+```DAX
+
 2. Top Subcategory = 
 VAR Tbl =
     SUMMARIZE(
@@ -51,11 +57,11 @@ AVERAGEX(
 ```
 
 ```DAX
+ 4. Pareto Visual Measures:
+
 a. Total Sales All Selected Products(Peratto) = 
 CALCULATE( [Total Sales], ALLSELECTED( product_info[product_name] ) )
-```
 
-```DAX
 b. Product Sales Rank = 
 RANKX(
   ALLSELECTED( product_info[product_name] ),
@@ -64,9 +70,7 @@ RANKX(
   DESC,
   DENSE
 )
-```
 
-```DAX
 c. Cumulative Sales = 
 VAR ThisRank = [Product Sales Rank]
 RETURN
@@ -77,47 +81,37 @@ CALCULATE(
     RANKX( ALLSELECTED( product_info[product_name] ), [Total Sales], , DESC, DENSE ) <= ThisRank
   )
 )
-```
-
-```DAX
+ 
 d. Cumulative Sales % = 
 DIVIDE( [Cumulative Sales], [Total Sales All Selected Products(Peratto)], 0 )
-```
 
-```DAX
 e. Pareto Flag (Numeric) = 
 IF( [Cumulative Sales %] <= 0.8, 1, 0 )
-```
 
-```DAX
 f. Pareto Products Count = 
 SUMX(
   VALUES( product_info[product_name] ),
   IF( [Cumulative Sales %] <= 0.8, 1, 0 )
 )
-```
 
-```DAX
 g. Pareto Sales = 
 SUMX(
   VALUES( product_info[product_name] ),
   IF( [Cumulative Sales %] <= 0.8, [Total Sales], 0 )
 )
-```
 
-```DAX
 h. Pareto Sales % = 
 DIVIDE( [Pareto Sales], [Total Sales All Selected Products(Peratto)], 0 )
-```
 
-```DAX
-Pareto Summary Text = 
+i. Pareto Summary Text = 
 VAR nProducts = [Pareto Products Count]
 VAR pct = FORMAT( [Pareto Sales %], "0.0%" )
 VAR totalProducts = DISTINCTCOUNT( product_info[product_name] )
 RETURN
 nProducts & " of " & totalProducts & " products = " & pct & " of sales (Pareto)"
 ```
+
+## Customer Dashboard Measures:
 
 ```DAX
 a. New Customers = 
