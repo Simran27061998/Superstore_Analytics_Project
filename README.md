@@ -224,6 +224,8 @@ Steps performed in the Power BI dashboard development:
 
 [superstore_powerbi_dashboard](powerbi/Superstore_Dashboard.pbix)
 
+[superstore_powerbi_dax_measures](powerbi/dax_measures.md)
+
 ⚠️ Note: Power BI `.pbix` files cannot be previewed on GitHub.  
 Download and open in **Power BI Desktop** to view the interactive version.
 
