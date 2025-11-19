@@ -66,7 +66,7 @@ Steps performed in the data cleaning script:
  
  [superstore_cleaned_dataset](superstore_cleaned_dataset/Superstore_cleaned_final.csv)
  
-### 2. Python - Predictive Sales Forecasting 
+## 2. Python - Predictive Sales Forecasting 
 
 Steps performed in the predictive analysis script:
 
@@ -84,12 +84,14 @@ Screenshots:
 
 <img width="1023" height="394" alt="image" src="https://github.com/user-attachments/assets/3cecba31-1845-49a6-ac29-dcb012916773" />
 
+
 <img width="1004" height="372" alt="image" src="https://github.com/user-attachments/assets/df381475-383f-4b6a-b7fb-fe7c9b1f4bf5" />
+
 
 <img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/bdce73d6-a01f-454b-a869-644860d38d11" />
 
 
-### Key Outcomes 
+## Key Outcomes (Python)
 
 * Fully cleaned, structured dataset for SQL modeling
 
@@ -103,7 +105,7 @@ Screenshots:
 
 ---
 
-### 3. MySQL — Data Modeling & ETL
+## 3. MySQL — Data Modeling & ETL
 
 Steps performed in the data modeling and ETL process:
 
@@ -140,7 +142,7 @@ Database Components:
 
 ---
 
-### 4. MySQL — Analytical SQL Queries
+## 4. MySQL — Analytical SQL Queries
 
 Steps performed in SQL analysis:
 
@@ -162,3 +164,87 @@ Steps performed in SQL analysis:
 [superstore_mysql_analysis_queries](mysql/mysql_analysis_queries.md)
 
 [superstore_mysql_analysis_outputs](mysql/mysql_query_outputs)
+
+## Key Outcomes (SQL)
+
+- Fully implemented **Star Schema** enabling efficient analytic queries  
+- Accurate and validated fact table with perfect row & sales matching  
+- Clean mapping between raw data → dimensions → fact  
+- Rich date dimension powering trend, seasonality, and calendar analysis  
+- 15+ SQL reports answering real business questions  
+- Export-ready outputs feeding Power BI dashboards
+
+---
+  
+## 5. Power BI — Dashboarding & Business Insights
+
+Steps performed in the Power BI dashboard development:
+
+- Connected Power BI to the cleaned MySQL dataset / exported CSV files  
+- Built a fully interactive, multi-page dashboard for business stakeholders  
+- Designed KPI cards for quick executive visibility (Sales, Orders, AOV, Profit Estimate)  
+- Created trend visuals for yearly, quarterly, and monthly sales patterns  
+- Visualized customer behavior across segments and geographies  
+- Built product performance views for category, subcategory, and product-level analysis  
+- Developed operational views to analyze shipping mode efficiency and delivery KPIs  
+- Applied drill-downs, hierarchies, slicers, and cross-filtering for dynamic exploration  
+- Ensured clean layout, consistent theme, and business-friendly storytelling  
+
+### Dashboard Pages:
+
+- **Executive Overview**  
+  - Total Sales  
+  - Estimated Profit (based on estimated average margin)  
+  - Total Orders  
+  - Average Order Value  
+  - YoY Growth and Trend Lines  
+
+- **Sales Performance**  
+  - Monthly and quarterly trend analysis  
+  - YoY comparison charts  
+  - Sales by region and state  
+  - Seasonal patterns  
+
+- **Customer Insights**  
+  - Segment-wise sales and order breakdown  
+  - Top 10 customers  
+  - Customer behavioral patterns (AOV, frequency)  
+
+- **Product Performance**  
+  - Category and subcategory contribution  
+  - Top-selling products  
+  - Product-level revenue distribution  
+
+- **Shipping & Operations**  
+  - Delivery days trend  
+  - On-time vs Late shipments  
+  - Ship mode efficiency  
+  - Region-wise delivery performance  
+
+[superstore_powerbi_dashboard](powerbi/Superstore_Dashboard.pbix)
+
+⚠️ Note: Power BI `.pbix` files cannot be previewed on GitHub.  
+Download and open in **Power BI Desktop** to view the interactive version.
+
+Screenshots:
+
+<img width="1216" height="676" alt="image" src="https://github.com/user-attachments/assets/530b2331-2b37-4682-b426-5dc3efd537a7" />
+
+
+<img width="1204" height="679" alt="image" src="https://github.com/user-attachments/assets/1fb1f815-1b09-48f2-a4bd-4bf0a77c873f" />
+
+
+<img width="1201" height="678" alt="image" src="https://github.com/user-attachments/assets/63592cf6-7ade-432b-8dbe-d9cd5f012010" />
+
+
+<img width="1209" height="675" alt="image" src="https://github.com/user-attachments/assets/a0c77e8b-c6eb-47a2-a64c-3eb8a03bbf59" />
+
+
+## Key Outcomes (Power BI)
+
+- Complete business-ready dashboard with multi-page navigation  
+- Executive-friendly KPI view of sales, orders, profitability, and trends  
+- Deep insights into customer behavior and product performance  
+- Real-world operational KPIs for shipping and delivery performance  
+- Integrated 7-day sales forecast for data-driven planning  
+- Clean, interactive, and visually consistent dashboards optimized for storytelling  
