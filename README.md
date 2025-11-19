@@ -49,7 +49,7 @@ Superstore_Analytics_Project/
 
 ---
 
-## Python — Data Cleaning 
+## 1. Python — Data Cleaning 
 
 Steps performed in the data cleaning script:
 
