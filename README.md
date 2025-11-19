@@ -49,9 +49,7 @@ Superstore_Analytics_Project/
 
 ---
 
-## Python — Data Cleaning & Predictive Sales Forecasting
-
-## Data Cleaning (Python)
+## Python — Data Cleaning 
 
 Steps performed in the data cleaning script:
 
@@ -63,29 +61,24 @@ Steps performed in the data cleaning script:
 - Exported the cleaned dataset into CSV and loaded it into MySQL for modeling
   
  [superstore_raw_dataset](python/SuperStore_dataset_cleaned.ipynb)
+ 
  [superstore_clean_python_script](superstore_raw_dataset/SuperStore_raw_dataset.csv)
+ 
  [superstore_cleaned_dataset](superstore_cleaned_dataset/Superstore_cleaned_final.csv)
  
-### 2. Predictive Sales Forecasting (predictive_upload.py)
+### 2. Python - Predictive Sales Forecasting 
 
-#### Aggregate daily sales
+Steps performed in the predictive analysis script:
 
-#### Holt-Winters Exponential Smoothing (Trend + Weekly Seasonality)
+- Aggregated daily sales for time-series modeling  
+- Modeled trend and weekly seasonality using Holt-Winters Exponential Smoothing  
+- Generated a 7-day sales forecast with 95% confidence intervals  
+- Visualized historical trends (30-day, 90-day) and forecast curves  
+- Exported the forecast output for dashboarding  
 
-#### Confidence intervals (95%)
+ [superstore_predictive_analysis_python_script](python/SuperStore_Predictive_Analysis.ipynb)
 
-#### Trend visualizations generated
-
-* Last 90 days
-
-* Last 30 days
-
-* Forecast vs actuals
-
-#### Export forecast results
-
-
-### Key Outcomes (Python)
+### Key Outcomes 
 
 * Fully cleaned, structured dataset for SQL modeling
 
