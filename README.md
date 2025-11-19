@@ -27,7 +27,7 @@ The objective is to simulate a real-world BI/Analytics pipeline and deliver both
 
 ## Repository Structure
 
-
+---
 Superstore_Analytics_Project/
 │
 ├── python/
